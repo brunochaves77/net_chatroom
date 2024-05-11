@@ -1,0 +1,15 @@
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\bin\Debug\net7.0\ChatRoom.Repository.deps.json
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\bin\Debug\net7.0\ChatRoom.Repository.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\bin\Debug\net7.0\ChatRoom.Repository.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\bin\Debug\net7.0\ChatRoom.Domain.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\bin\Debug\net7.0\ChatRoom.Domain.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.csproj.AssemblyReference.cache
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.AssemblyInfoInputs.cache
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.AssemblyInfo.cs
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.csproj.CopyComplete
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\refint\ChatRoom.Repository.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ChatRoom.Repository.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Repository\obj\Debug\net7.0\ref\ChatRoom.Repository.dll
