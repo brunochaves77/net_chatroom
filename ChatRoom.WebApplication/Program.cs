@@ -12,6 +12,14 @@ builder.Services
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     );
+                
+                options.AddPolicy("reactApp", builder =>
+                {
+                    builder.WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials();
+                });
 
                 options.AddPolicy("signalr",
                     builder => builder
@@ -31,6 +39,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseCors("signalr");
+app.UseCors("reactApp");
 app.UseRouting();
 app.UseAuthorization();
 app.MapHub<ChatHub>("/chatHub");
