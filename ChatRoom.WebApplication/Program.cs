@@ -3,6 +3,9 @@ using ChatRoom.WebApplication.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSignalR();
 builder.Services
             .AddCors(options => {
@@ -43,5 +46,6 @@ app.UseCors("reactApp");
 app.UseRouting();
 app.UseAuthorization();
 app.MapHub<ChatHub>("/chatHub");
+app.MapControllers();
 
 app.Run();

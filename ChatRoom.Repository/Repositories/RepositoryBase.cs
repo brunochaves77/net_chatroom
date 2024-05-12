@@ -12,11 +12,16 @@ namespace ChatRoom.Repository.Repositories {
 
             Context = context;
 
-            var entities = Context.GetType().GetProperties().OfType<DbSet<Entity>>().FirstOrDefault();
+            var entities = Context.GetType().GetProperties().Where(x => x.PropertyType == typeof(DbSet<Entity>)).FirstOrDefault();
             if (entities == null)
-                throw new ArgumentNullException($"Entity of type '{typeof(Entity).Name}' not founded on RepositoryContext.");
+                throw new Exception($"Entity of type '{typeof(Entity).Name}' not founded on AppDataContext.");
 
-            Entities = entities;
+            var entity = (DbSet<Entity>?) entities.GetValue(Context);
+
+            if(entity == null)
+                throw new Exception($"Entity of type '{typeof(Entity).Name}' not founded on AppDataContext.");
+
+            Entities = entity;
 
         }
 

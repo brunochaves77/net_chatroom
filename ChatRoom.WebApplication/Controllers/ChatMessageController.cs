@@ -1,0 +1,17 @@
+﻿using ChatRoom.Application.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace ChatRoom.WebApplication.Controllers {
+
+    [Route("api")]
+    [ApiController]
+    public class ChatMessageController : ControllerBase {
+
+        private readonly ChatMessageService _chatMessageService;
+
+        public ChatMessageController(ChatMessageService chatMessageService) { 
+            _chatMessageService = chatMessageService;
+        }
+
+    }
+}
