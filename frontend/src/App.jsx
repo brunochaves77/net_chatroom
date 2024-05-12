@@ -11,6 +11,7 @@ import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
 import WaitingRoom from "./components/Waitingroom";
 import ChatRoom from "./components/Chatroom";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import PrivateRoute from "./components/PrivateRoute";
 import {
   isAuthenticated,
@@ -103,6 +104,10 @@ function App() {
             <Route
               path="/login"
               element={<Login login={login} />}
+            />
+            <Route
+              path="/register"
+              element={<Register />}
             />
             <Route
               path="/"

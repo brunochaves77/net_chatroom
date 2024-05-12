@@ -1,19 +1,25 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
-import Register from "./Register";
+import { Link, useNavigate } from "react-router-dom";
+import { register } from "../auth";
 
-const Login = ({ login }) => {
-  const navigate = useNavigate();
-
+const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = await login(username, password);
-    if (success) {
-      navigate("/");
+    try {
+      const success = await register(username, password);
+      if (success) {
+        alert("Registration successful!");
+        navigate("/login");
+      } else {
+        alert("Failed to register.");
+      }
+    } catch (error) {
+      alert("Failed to register:", error);
     }
   };
 
@@ -25,7 +31,7 @@ const Login = ({ login }) => {
             onSubmit={handleSubmit}
             className="border p-4 rounded"
           >
-            <h2 className="text-center mb-4">Login</h2>
+            <h2 className="text-center mb-4">New Account</h2>
             <Form.Group
               controlId="formBasicUsername"
               className="mb-3"
@@ -54,21 +60,10 @@ const Login = ({ login }) => {
               <Button
                 variant="primary"
                 type="submit"
-                className="w-50"
+                className="w-75"
               >
-                Login
+                Sign up
               </Button>
-              <Link
-                to="/register"
-                style={{ marginLeft: "20px" }}
-              >
-                <Button
-                  variant="secondary"
-                  className="ml-2 w-40"
-                >
-                  Sign up
-                </Button>
-              </Link>
             </div>
           </Form>
         </Col>
@@ -77,4 +72,4 @@ const Login = ({ login }) => {
   );
 };
 
-export default Login;
+export default Register;
