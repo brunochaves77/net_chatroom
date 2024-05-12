@@ -1,11 +1,32 @@
 export const login = async (username, password) => {
-  // Waiting
+  try {
+    const response = await fetch("https://localhost:7062/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    if (response.ok) {
+      const { token } = await response.json();
+
+      localStorage.setItem("token", token);
+
+      return true;
+    } else {
+      throw new Error("Login failed");
+    }
+  } catch (error) {
+    console.error("Failed to login:", error);
+    return false;
+  }
 };
 
-export const logout = async () => {
-  // Waiting
+export const logout = () => {
+  localStorage.removeItem("token");
 };
 
 export const isAuthenticated = () => {
-  // Waiting
+  return localStorage.getItem("token") !== null;
 };

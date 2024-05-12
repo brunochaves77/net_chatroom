@@ -10,8 +10,10 @@ const Login = ({ login }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(username, password);
-    navigate("/");
+    const success = await login(username, password);
+    if (success) {
+      navigate("/");
+    }
   };
 
   return (

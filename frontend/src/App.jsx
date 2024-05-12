@@ -66,8 +66,12 @@ function App() {
 
   const login = async (username, password) => {
     try {
-      await loginService(username, password);
-      setIsLoggedIn(true);
+      const success = await loginService(username, password);
+      if (success) {
+        setIsLoggedIn(true);
+      } else {
+        alert("Failed to login. Please check your credentials and try again.");
+      }
     } catch (error) {
       console.error("Failed to login:", error);
     }
