@@ -1,4 +1,4 @@
-﻿using ChatRoom.Repository.Interfaces;
+﻿using ChatRoom.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 

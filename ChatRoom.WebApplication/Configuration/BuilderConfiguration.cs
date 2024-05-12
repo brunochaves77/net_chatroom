@@ -1,4 +1,5 @@
 ﻿using ChatRoom.Repository;
+using ChatRoom.Repository.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatRoom.WebApplication.Configuration {
@@ -12,6 +13,10 @@ namespace ChatRoom.WebApplication.Configuration {
                 throw new Exception("ConnectionString 'DefaultConnection' not informed on appSettings.");
 
             builder.Services.AddDbContext<AppDataContext>(options => options.UseSqlServer(cnnString, b => b.MigrationsAssembly("ChatRoom.WebApplication")));
+
+            builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<RoomRepository>();
+            builder.Services.AddScoped<ChatMessageRepository>();
 
         }
 

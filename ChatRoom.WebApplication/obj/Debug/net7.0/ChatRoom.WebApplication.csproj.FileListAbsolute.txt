@@ -136,3 +136,10 @@ C:\Users\bruno\Downloads\net_chatroom\ChatRoom.WebApplication\obj\Debug\net7.0\r
 C:\Users\bruno\Downloads\net_chatroom\ChatRoom.WebApplication\obj\Debug\net7.0\ChatRoom.WebApplication.pdb
 C:\Users\bruno\Downloads\net_chatroom\ChatRoom.WebApplication\obj\Debug\net7.0\ChatRoom.WebApplication.genruntimeconfig.cache
 C:\Users\bruno\Downloads\net_chatroom\ChatRoom.WebApplication\obj\Debug\net7.0\ref\ChatRoom.WebApplication.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\ChatRoom.Application.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\ChatRoom.Application.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\Humanizer.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.WebApplication\bin\Debug\net7.0\System.CodeDom.dll

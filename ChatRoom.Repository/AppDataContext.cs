@@ -12,10 +12,15 @@ namespace ChatRoom.Repository {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration<User>(new UserEntityConfiguration());
+            modelBuilder.ApplyConfiguration<Room>(new RoomEntityConfiguration());
+            modelBuilder.ApplyConfiguration<ChatMessage>(new ChatMessageEntityConfiguration());
 
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<ChatMessage> ChatMessages { get; set; }
+
 
 
     }

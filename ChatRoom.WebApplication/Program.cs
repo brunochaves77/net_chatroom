@@ -31,7 +31,7 @@ builder.Services
             });
 
 
-//builder.ConfigureRepository();
+builder.ConfigureRepository();
 builder.ConfigureService();
 
 var app = builder.Build();

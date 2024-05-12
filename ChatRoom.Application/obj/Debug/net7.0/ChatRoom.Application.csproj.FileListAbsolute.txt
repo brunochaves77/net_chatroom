@@ -1,0 +1,17 @@
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Application.deps.json
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Application.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Application.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Domain.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Repository.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Domain.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\bin\Debug\net7.0\ChatRoom.Repository.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.csproj.AssemblyReference.cache
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.AssemblyInfoInputs.cache
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.AssemblyInfo.cs
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.csproj.CoreCompileInputs.cache
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.csproj.CopyComplete
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\refint\ChatRoom.Application.dll
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ChatRoom.Application.pdb
+C:\Users\lucas\OneDrive\Lixos\Documents\GitHub\net_chatroom\ChatRoom.Application\obj\Debug\net7.0\ref\ChatRoom.Application.dll
