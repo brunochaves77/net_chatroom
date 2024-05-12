@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const WaitingRoom = ({ joinChatRoom }) => {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState("");
   const [chatroom, setChatroom] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     joinChatRoom(chatroom);
+    navigate("/chatroom");
   };
 
   return (

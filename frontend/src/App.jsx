@@ -1,14 +1,28 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
 import WaitingRoom from "./components/Waitingroom";
 import ChatRoom from "./components/Chatroom";
+import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import {
+  isAuthenticated,
+  login as loginService,
+  logout as logoutService,
+} from "./auth";
 
 function App() {
   const [conn, setConnection] = useState();
   const [messages, setMessages] = useState([]);
   const [roomName, setRoomName] = useState();
+  const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
 
   const joinChatRoom = async (chatroom) => {
     setRoomName(chatroom);
@@ -50,8 +64,26 @@ function App() {
     setRoomName(null);
   };
 
+  const login = async (username, password) => {
+    try {
+      await loginService(username, password);
+      setIsLoggedIn(true);
+    } catch (error) {
+      console.error("Failed to login:", error);
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await logoutService();
+      setIsLoggedIn(false);
+    } catch (error) {
+      console.error("Failed to logout:", error);
+    }
+  };
+
   return (
-    <>
+    <Router>
       <main>
         <div className="bg-primary py-3">
           <Container>
@@ -63,23 +95,50 @@ function App() {
           </Container>
         </div>
         <Container className="mt-4">
-          <Row>
-            <Col>
-              {!conn ? (
-                <WaitingRoom joinChatRoom={joinChatRoom} />
-              ) : (
-                <ChatRoom
-                  messages={messages}
-                  sendMessage={sendMessage}
-                  roomName={roomName}
-                  leaveChatRoom={leaveChatRoom}
-                />
-              )}
-            </Col>
-          </Row>
+          <Routes>
+            <Route
+              path="/login"
+              element={<Login login={login} />}
+            />
+            <Route
+              path="/"
+              element={
+                isLoggedIn ? (
+                  <WaitingRoom joinChatRoom={joinChatRoom} />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+            <Route
+              path="/chatroom"
+              element={
+                isLoggedIn ? (
+                  <ChatRoom
+                    messages={messages}
+                    sendMessage={sendMessage}
+                    roomName={roomName}
+                    leaveChatRoom={leaveChatRoom}
+                  />
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+          </Routes>
+          {isLoggedIn && (
+            <div className="d-flex justify-content-end mt-4">
+              <Button
+                variant="danger"
+                onClick={logout}
+              >
+                Logout
+              </Button>
+            </div>
+          )}
         </Container>
       </main>
-    </>
+    </Router>
   );
 }
 
