@@ -28,8 +28,9 @@ function App() {
   const joinChatRoom = async (chatroom) => {
     setRoomName(chatroom);
     try {
+      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1Y2FzZzQiLCJuYmYiOjE3MTU2NTcyNzYsImV4cCI6MTcxNTY4NjA3NiwiaWF0IjoxNzE1NjU3Mjc2fQ.MVE9h_VlmJGeHuNQjMUwfB-snRO41ik05tGKyl32zco';
       const conn = new HubConnectionBuilder()
-        .withUrl("https://localhost:7062/chatHub")
+        .withUrl("https://localhost:7062/chatHub", { accessTokenFactory: () => token })
         .configureLogging(LogLevel.Information)
         .build();
 
@@ -53,7 +54,7 @@ function App() {
 
   const sendMessage = async (message) => {
     try {
-      await conn.invoke("SendMessage", roomName, userName, message);
+      await conn.invoke("SendMessage", message);
     } catch (e) {
       console.log(e);
     }
@@ -69,6 +70,7 @@ function App() {
     try {
       const success = await loginService(username, password);
       if (success) {
+        console.log("Logou-se");
         setIsLoggedIn(true);
       } else {
         alert("Failed to login. Please check your credentials and try again.");

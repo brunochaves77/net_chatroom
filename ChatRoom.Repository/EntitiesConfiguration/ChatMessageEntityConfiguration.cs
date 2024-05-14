@@ -13,14 +13,13 @@ namespace ChatRoom.Repository.EntitiesConfiguration {
 
             builder.HasIndex(x => new { x.RoomId, x.ReceivedAt });
 
-            builder.Property(x => x.UserId).IsRequired();
+            builder.Property(x => x.Username).IsRequired();
             builder.Property(x => x.RoomId).IsRequired();
 
             builder.Property(x => x.Message).HasMaxLength(280).IsRequired();
             builder.Property(x => x.ReceivedAt).IsRequired();
 
             builder.HasOne(x => x.Room).WithMany().HasForeignKey(x => x.RoomId);
-            builder.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
 
         }
 

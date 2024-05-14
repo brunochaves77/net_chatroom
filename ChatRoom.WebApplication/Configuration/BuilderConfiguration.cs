@@ -14,7 +14,6 @@ namespace ChatRoom.WebApplication.Configuration {
 
             builder.Services.AddDbContext<AppDataContext>(options => options.UseSqlServer(cnnString, b => b.MigrationsAssembly("ChatRoom.WebApplication")));
 
-            builder.Services.AddScoped<UserRepository>();
             builder.Services.AddScoped<RoomRepository>();
             builder.Services.AddScoped<ChatMessageRepository>();
 

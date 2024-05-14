@@ -18,7 +18,7 @@ namespace ChatRoom.Application.Services {
 
         public Room? GetRoomById(Guid id) 
         {
-            return  GetFirstOrDefault(x=>x.Id == id);
+            return  GetFirstOrDefault(x => x.Id == id);
         }
 
         public void CreateRoom(Room room) 

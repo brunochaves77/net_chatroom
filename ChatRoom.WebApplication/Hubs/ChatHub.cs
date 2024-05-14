@@ -1,27 +1,35 @@
 ﻿using ChatRoom.Application.Models;
 using ChatRoom.Domain.Entities;
 using ChatRoom.Repository.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
 
 namespace ChatRoom.WebApplication.Hubs {
+
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class ChatHub : Hub {
-        private static Dictionary<IdentityUser, UserChatData> _chatRooms = new Dictionary<IdentityUser, UserChatData>();
+        private static Dictionary<string, UserChatData> _chatRooms = new Dictionary<string, UserChatData>();
         
         private readonly ChatMessageRepository _chatMessageRepository;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoomRepository _roomRepository;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public ChatHub(ChatMessageRepository chatMessageRepository, UserManager<IdentityUser> userManager, RoomRepository roomRepository)
+        public ChatHub(ChatMessageRepository chatMessageRepository, UserManager<IdentityUser> userManager, RoomRepository roomRepository, IHttpContextAccessor httpContextAccessor)
         {
             _roomRepository = roomRepository;
             _chatMessageRepository = chatMessageRepository;
             _userManager = userManager;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task JoinChatRoom(string roomName) {
             string connectionId = Context.ConnectionId;
+
             var room = _roomRepository.GetFirstOrDefault(x => x.Name == roomName);
+            var httpContext = _httpContextAccessor.HttpContext;
+
             if (room == null)
             {
                 room = new Room() {Name = roomName, Id = Guid.NewGuid()};
@@ -32,15 +40,15 @@ namespace ChatRoom.WebApplication.Hubs {
             if (Context.User == null)
                 throw new Exception("Invalid session.");
             
-            var user = await _userManager.GetUserAsync(Context.User);
-            
+            var user = await _userManager.FindByNameAsync(Context.User.Identity.Name);
+
             if (user == null) 
                 throw new Exception("Invalid session.");
 
-            _chatRooms.Remove(user);
+            _chatRooms.Remove(user.UserName);
             await Groups.RemoveFromGroupAsync(connectionId, roomName);
             
-            _chatRooms.Add(user, new UserChatData(){Room = room, SignalConnectionId = connectionId});
+            _chatRooms.Add(user.UserName, new UserChatData(){Room = room, SignalConnectionId = connectionId});
             
             await Groups.AddToGroupAsync(connectionId, roomName);
         }
@@ -49,12 +57,12 @@ namespace ChatRoom.WebApplication.Hubs {
             if (Context.User == null)
                 throw new Exception("Invalid session.");
             
-            var user = await _userManager.GetUserAsync(Context.User);
+            var user = await _userManager.FindByNameAsync(Context.User.Identity.Name);
             
             if (user == null) 
                 throw new Exception("Invalid session.");
 
-            var userChatData = _chatRooms[user];
+            var userChatData = _chatRooms[user.UserName];
             
             if (userChatData == null)
                 throw new Exception("User is not assigned to a room.");
@@ -79,7 +87,7 @@ namespace ChatRoom.WebApplication.Hubs {
             if (user == null) 
                 throw new Exception("Invalid session.");
             
-            _chatRooms.Remove(user);
+            _chatRooms.Remove(user.UserName);
             await Groups.RemoveFromGroupAsync(connectionId, roomName);
         }
     }

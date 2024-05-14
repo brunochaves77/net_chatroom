@@ -5,9 +5,9 @@ namespace ChatRoom.WebApplication.Configuration {
 
         public static void ConfigureService(this WebApplicationBuilder builder) {
 
-            builder.Services.AddScoped<UserService>();
             builder.Services.AddScoped<RoomService>();
             builder.Services.AddScoped<ChatMessageService>();
+            builder.Services.AddScoped<IdentityService>();
 
         }
 

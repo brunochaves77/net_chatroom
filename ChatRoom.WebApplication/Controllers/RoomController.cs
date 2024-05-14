@@ -17,6 +17,7 @@ namespace ChatRoom.WebApplication.Controllers {
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         public IActionResult GetAllRooms() 
         {
             var rooms = _roomService.GetAllRooms();

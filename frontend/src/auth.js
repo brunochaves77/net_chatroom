@@ -1,6 +1,6 @@
 export const register = async (username, password) => {
   try {
-    const response = await fetch("https://localhost:7062/register", {
+    const response = await fetch("https://localhost:7062/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const register = async (username, password) => {
 
 export const login = async (username, password) => {
   try {
-    const response = await fetch("https://localhost:7062/login", {
+    const response = await fetch("https://localhost:7062/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,9 +31,8 @@ export const login = async (username, password) => {
     });
 
     if (response.ok) {
-      const { token } = await response.json();
-
-      localStorage.setItem("token", token);
+      
+      console.log("Logou");
 
       return true;
     } else {

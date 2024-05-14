@@ -1,11 +1,13 @@
 using ChatRoom.Repository;
 using ChatRoom.WebApplication.Configuration;
+using ChatRoom.WebApplication.Controllers;
 using ChatRoom.WebApplication.Hubs;
 using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.ConfigureJWT();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSignalR();
@@ -27,12 +29,12 @@ builder.Services
                 });
 
                 options.AddPolicy("signalr",
-                    builder => builder
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-
-                    .AllowCredentials()
-                    .SetIsOriginAllowed(hostName => true));
+                      builder => builder
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .SetIsOriginAllowed(hostName => true));
+                ;
             });
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
