@@ -1,9 +1,10 @@
 ﻿using ChatRoom.Domain.Entities;
 using ChatRoom.Repository.EntitiesConfiguration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChatRoom.Repository {
-    public class AppDataContext : DbContext {
+    public class AppDataContext : IdentityDbContext {
 
         public AppDataContext(DbContextOptions<AppDataContext> options) : base(options) { }
 

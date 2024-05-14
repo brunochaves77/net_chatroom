@@ -11,7 +11,6 @@ namespace ChatRoom.Repository.EntitiesConfiguration {
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.UserName).HasMaxLength(32).IsRequired();
-            builder.Property(x => x.Email).HasMaxLength(70).IsRequired();
             builder.Property(x => x.Password).HasMaxLength(32).IsRequired();
 
         }

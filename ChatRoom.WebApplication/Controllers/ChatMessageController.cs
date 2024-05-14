@@ -12,6 +12,15 @@ namespace ChatRoom.WebApplication.Controllers {
         public ChatMessageController(ChatMessageService chatMessageService) { 
             _chatMessageService = chatMessageService;
         }
+        
+        [HttpGet("messages/latest-by-room-id/{roomId}")]
+        public IActionResult GetChatMessages(Guid roomId) 
+        {
+            var chatMessages = _chatMessageService.GetLatestMessagesFromRoom(roomId);
+            return Ok(chatMessages);
+        }
 
     }
+    
+    
 }

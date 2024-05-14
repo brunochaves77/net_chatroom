@@ -1,43 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj": {}
+    "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj": {
+    "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj",
         "projectName": "ChatRoom.Application",
-        "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Application\\obj\\",
+        "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj": {
-                "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj"
+              "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj": {
+                "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj"
               },
-              "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj": {
-                "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj"
+              "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj": {
+                "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj"
               }
             }
           }
@@ -67,33 +60,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bruno\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj": {
+    "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj",
         "projectName": "ChatRoom.Domain",
-        "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\obj\\",
+        "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -127,41 +113,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bruno\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj": {
+    "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj",
         "projectName": "ChatRoom.Repository",
-        "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\obj\\",
+        "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj": {
-                "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj"
+              "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj": {
+                "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Domain\\ChatRoom.Domain.csproj"
               }
             }
           }
@@ -176,6 +155,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.18, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.18, )"
@@ -201,44 +184,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bruno\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj": {
+    "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj",
         "projectName": "ChatRoom.WebApplication",
-        "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj",
-        "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.WebApplication\\obj\\",
+        "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.WebApplication\\ChatRoom.WebApplication.csproj",
+        "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.WebApplication\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj": {
-                "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj"
+              "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj": {
+                "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Application\\ChatRoom.Application.csproj"
               },
-              "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj": {
-                "projectPath": "C:\\Users\\lucas\\OneDrive\\Lixos\\Documents\\GitHub\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj"
+              "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj": {
+                "projectPath": "C:\\Users\\bruno\\Downloads\\net_chatroom\\ChatRoom.Repository\\ChatRoom.Repository.csproj"
               }
             }
           }
@@ -287,7 +263,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bruno\\.dotnet\\sdk\\7.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

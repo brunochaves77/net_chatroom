@@ -1,5 +1,7 @@
+using ChatRoom.Repository;
 using ChatRoom.WebApplication.Configuration;
 using ChatRoom.WebApplication.Hubs;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +35,10 @@ builder.Services
                     .SetIsOriginAllowed(hostName => true));
             });
 
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<AppDataContext>()
+    .AddDefaultTokenProviders();
+
 
 builder.ConfigureRepository();
 builder.ConfigureService();
@@ -44,6 +50,7 @@ app.UseStaticFiles();
 app.UseCors("signalr");
 app.UseCors("reactApp");
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapHub<ChatHub>("/chatHub");
 app.MapControllers();

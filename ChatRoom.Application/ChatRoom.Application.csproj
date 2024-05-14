@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Requests\" />
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ChatRoom.Domain\ChatRoom.Domain.csproj" />
     <ProjectReference Include="..\ChatRoom.Repository\ChatRoom.Repository.csproj" />
   </ItemGroup>

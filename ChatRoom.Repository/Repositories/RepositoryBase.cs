@@ -1,6 +1,7 @@
 ﻿using ChatRoom.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using ChatRoom.Domain.Entities;
 
 namespace ChatRoom.Repository.Repositories {
     public abstract class RepositoryBase<Entity> : IRepositoryBase<Entity> where Entity : class {
@@ -30,6 +31,12 @@ namespace ChatRoom.Repository.Repositories {
         public void Add(Entity entity) {
             Entities.Add(entity);
         }
+        
+        public IEnumerable<Entity> GetAll()
+        {
+            return  Entities.ToList();
+        }
+
 
         public void Update(Entity entity) {
             Entities.Update(entity);

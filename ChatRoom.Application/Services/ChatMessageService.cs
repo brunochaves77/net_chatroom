@@ -10,6 +10,10 @@ namespace ChatRoom.Application.Services {
         public ChatMessageService(ChatMessageRepository chatMessageRepository) : base(chatMessageRepository) {
             _chatMessageRepository = chatMessageRepository;
         }
+        
+        public IEnumerable<ChatMessage> GetLatestMessagesFromRoom(Guid roomId, int registerCount = 50) {
+            return _chatMessageRepository.GetLatestMessagesFromRoom(roomId, registerCount);
+        }
 
     }
 }
