@@ -1,12 +1,7 @@
-﻿using ChatRoom.Application.Factories;
-using ChatRoom.Application.Models.Responses;
-using ChatRoom.Application.Models.Requests;
+﻿using ChatRoom.Application.Models.Requests;
 using ChatRoom.Application.Services;
-using ChatRoom.Domain.Entities;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace ChatRoom.WebApplication.Controllers {
     [Route("api")]

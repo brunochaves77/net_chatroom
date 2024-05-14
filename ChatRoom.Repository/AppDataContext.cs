@@ -18,7 +18,7 @@ namespace ChatRoom.Repository {
 
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> DBUsers { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<ChatMessage> ChatMessages { get; set; }
 
