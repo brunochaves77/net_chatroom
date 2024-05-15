@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const WaitingRoom = ({ joinChatRoom }) => {
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState("");
   const [chatroom, setChatroom] = useState("");
 
   const handleSubmit = (e) => {
@@ -18,16 +17,6 @@ const WaitingRoom = ({ joinChatRoom }) => {
     <Container className="border p-4 rounded">
       <h2 className="text-center mb-4">Join Chatroom</h2>
       <Form onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Col>
-            <Form.Control
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-50 mx-auto"
-            />
-          </Col>
-        </Row>
         <Row className="mb-3">
           <Col>
             <Form.Control

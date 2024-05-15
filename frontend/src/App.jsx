@@ -28,19 +28,19 @@ function App() {
   const joinChatRoom = async (chatroom) => {
     setRoomName(chatroom);
     try {
-      const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Imx1Y2FzZzQiLCJuYmYiOjE3MTU2NTcyNzYsImV4cCI6MTcxNTY4NjA3NiwiaWF0IjoxNzE1NjU3Mjc2fQ.MVE9h_VlmJGeHuNQjMUwfB-snRO41ik05tGKyl32zco';
+      const token = localStorage.getItem("token");
+      console.log("token", token);
       const conn = new HubConnectionBuilder()
-        .withUrl("https://localhost:7062/chatHub", { accessTokenFactory: () => token })
+        .withUrl("https://localhost:7062/chatHub", {
+          accessTokenFactory: () => token,
+        })
         .configureLogging(LogLevel.Information)
         .build();
 
-      conn.on("JoinChatRoom", (msg) => {
-        console.log("msg: ", msg);
-      });
 
-      conn.on("ReceiveMessage", (username, msg) => {
-        console.log(msg);
-        setMessages((messages) => [...messages, { username, msg }]);
+      conn.on("ReceiveMessage", (user, msg) => {
+        var name = user.userName;
+        setMessages((messages) => [...messages, { name, msg }]);
       });
 
       await conn.start();
@@ -55,6 +55,7 @@ function App() {
   const sendMessage = async (message) => {
     try {
       await conn.invoke("SendMessage", message);
+      console.log("eviou", message);
     } catch (e) {
       console.log(e);
     }

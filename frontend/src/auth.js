@@ -31,10 +31,11 @@ export const login = async (username, password) => {
     });
 
     if (response.ok) {
-      
-      console.log("Logou");
+      const token = await response.text();
 
-      return true;
+      localStorage.setItem("token", token);
+
+      return token;
     } else {
       throw new Error("Login failed");
     }
@@ -44,8 +45,24 @@ export const login = async (username, password) => {
   }
 };
 
-export const logout = () => {
-  localStorage.removeItem("token");
+export const logout = async () => {
+  try {
+    const response = await fetch("https://localhost:7062/api/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      localStorage.removeItem("token");
+    } else {
+      throw new Error("Logout failed");
+    }
+  } catch (error) {
+    console.error("Failed to logout:", error);
+    return false;
+  }
 };
 
 export const isAuthenticated = () => {

@@ -34,7 +34,6 @@ const ChatRoom = ({ messages, sendMessage, roomName, leaveChatRoom }) => {
           <Button
             variant="danger"
             onClick={handleLeaveRoom}
-            block
           >
             Leave Room
           </Button>

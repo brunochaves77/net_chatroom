@@ -11,7 +11,7 @@ const MessageContainer = ({ messages }) => {
           key={index}
           className="mb-2"
         >
-          <span className="fw-bold">{msg.username}:</span> {msg.msg}
+          <span className="fw-bold">{msg.name}:</span> {msg.msg}
         </div>
       ))}
     </Container>
