@@ -8,15 +8,16 @@ import {
   Navigate,
 } from "react-router-dom";
 import { HubConnectionBuilder, LogLevel } from "@microsoft/signalr";
+
 import WaitingRoom from "./components/Waitingroom";
 import ChatRoom from "./components/Chatroom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import PrivateRoute from "./components/PrivateRoute";
 import {
   isAuthenticated,
   login as loginService,
   logout as logoutService,
+  baseUrl,
 } from "./auth";
 
 function App() {
@@ -29,14 +30,56 @@ function App() {
     setRoomName(chatroom);
     try {
       const token = localStorage.getItem("token");
-      console.log("token", token);
+
       const conn = new HubConnectionBuilder()
-        .withUrl("https://localhost:7062/chatHub", {
+        .withUrl(`${baseUrl}/chatHub`, {
           accessTokenFactory: () => token,
         })
         .configureLogging(LogLevel.Information)
         .build();
 
+      conn.on("GetMessages", async (roomId) => {
+        console.log("msg nova: ", roomId);
+        try {
+          var url = `${baseUrl}/api/messages/latest-by-room-id/${roomId}`;
+          console.log("test", url);
+          const response = await fetch(url, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+
+            data.sort((a, b) => {
+              return new Date(a.receivedAt) - new Date(b.receivedAt);
+            });
+
+            data.reverse();
+
+            setMessages([]);
+
+            setMessages(
+              data.map((message) => ({
+                id: message.Id,
+                name: message.Username,
+                msg: message.Message,
+                receivedAt: message.ReceivedAt,
+              }))
+            );
+
+            console.log("messagesss", messages);
+          } else {
+            throw new Error("Get messages failed");
+          }
+        } catch (error) {
+          console.error("Failed to get messages:", error);
+          return false;
+        }
+      });
 
       conn.on("ReceiveMessage", (user, msg) => {
         var name = user.userName;
@@ -61,12 +104,6 @@ function App() {
     }
   };
 
-  const leaveChatRoom = () => {
-    setConnection(null);
-    setMessages([]);
-    setRoomName(null);
-  };
-
   const login = async (username, password) => {
     try {
       const success = await loginService(username, password);
@@ -85,9 +122,18 @@ function App() {
     try {
       await logoutService();
       setIsLoggedIn(false);
+      setConnection(null);
+      setMessages([]);
+      setRoomName(null);
     } catch (error) {
       console.error("Failed to logout:", error);
     }
+  };
+
+  const leaveChatRoom = () => {
+    setConnection(null);
+    setMessages([]);
+    setRoomName(null);
   };
 
   return (

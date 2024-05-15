@@ -1,6 +1,8 @@
+export const baseUrl = "https://localhost:7062";
+
 export const register = async (username, password) => {
   try {
-    const response = await fetch("https://localhost:7062/api/register", {
+    const response = await fetch(`${baseUrl}/api/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +24,7 @@ export const register = async (username, password) => {
 
 export const login = async (username, password) => {
   try {
-    const response = await fetch("https://localhost:7062/api/login", {
+    const response = await fetch(`${baseUrl}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -47,7 +49,7 @@ export const login = async (username, password) => {
 
 export const logout = async () => {
   try {
-    const response = await fetch("https://localhost:7062/api/logout", {
+    const response = await fetch(`${baseUrl}/api/logout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
