@@ -39,6 +39,7 @@ namespace ChatRoom.WebApplication.Controllers {
             return BadRequest(ModelState);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest model) {
             if (ModelState.IsValid) {

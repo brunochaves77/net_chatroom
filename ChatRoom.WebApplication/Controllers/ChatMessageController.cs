@@ -1,4 +1,5 @@
 ﻿using ChatRoom.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChatRoom.WebApplication.Controllers {
@@ -13,6 +14,7 @@ namespace ChatRoom.WebApplication.Controllers {
             _chatMessageService = chatMessageService;
         }
         
+        [Authorize]
         [HttpGet("messages/latest-by-room-id/{roomId}")]
         public IActionResult GetChatMessages(Guid roomId) 
         {

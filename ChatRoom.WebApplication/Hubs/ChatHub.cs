@@ -51,6 +51,7 @@ namespace ChatRoom.WebApplication.Hubs {
             _chatRooms.Add(user.UserName, new UserChatData(){Room = room, SignalConnectionId = connectionId});
             
             await Groups.AddToGroupAsync(connectionId, roomName);
+            await Clients.Client(connectionId).SendAsync("GetMessages", room.Id);
         }
 
         public async Task SendMessage(string message) {
@@ -66,13 +67,25 @@ namespace ChatRoom.WebApplication.Hubs {
             
             if (userChatData == null)
                 throw new Exception("User is not assigned to a room.");
+            
+            var chatMessage = new ChatMessage
+            {
+                Id = Guid.NewGuid(), 
+                ReceivedAt = DateTime.UtcNow, 
+                Username = user.UserName, 
+                Message = message, 
+                RoomId = userChatData.Room.Id,
+                Room = userChatData.Room 
+            };
+
+            _chatMessageRepository.Add(chatMessage);
 
             foreach (var userKey in _chatRooms)
             {
                if (userKey.Value.Room.Id != userChatData.Room.Id)
                    continue;
                
-               await Clients.Client(userChatData.SignalConnectionId).SendAsync("ReceiveMessage", user, message);
+               await Clients.Client(userKey.Value.SignalConnectionId).SendAsync("ReceiveMessage", user, message);
             }
         }
 
