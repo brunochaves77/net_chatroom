@@ -13,11 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.WebApplication", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Domain", "ChatRoom.Domain\ChatRoom.Domain.csproj", "{8713A940-A416-481E-A78A-EE76236779C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoom.Application", "ChatRoom.Application\ChatRoom.Application.csproj", "{B5645310-065E-436A-866B-707F9818E1F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.Application", "ChatRoom.Application\ChatRoom.Application.csproj", "{B5645310-065E-436A-866B-707F9818E1F8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5C3F75F8-E584-496D-8405-54B2219E958F} = {5C3F75F8-E584-496D-8405-54B2219E958F}
 		{8713A940-A416-481E-A78A-EE76236779C5} = {8713A940-A416-481E-A78A-EE76236779C5}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatRoom.ChatBot", "ChatRoom.ChatBot\ChatRoom.ChatBot.csproj", "{C8737BBA-A5FA-48E5-93F0-571CBED569BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{B5645310-065E-436A-866B-707F9818E1F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5645310-065E-436A-866B-707F9818E1F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5645310-065E-436A-866B-707F9818E1F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8737BBA-A5FA-48E5-93F0-571CBED569BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8737BBA-A5FA-48E5-93F0-571CBED569BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8737BBA-A5FA-48E5-93F0-571CBED569BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8737BBA-A5FA-48E5-93F0-571CBED569BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{B9D83E2E-6428-4D00-869F-855D364E6BBF} = {E3DB5AD7-1FDF-472C-BCF5-019658FEE13E}
 		{8713A940-A416-481E-A78A-EE76236779C5} = {1ACA3686-06C9-4021-8529-4C56F79906E6}
 		{B5645310-065E-436A-866B-707F9818E1F8} = {E3DB5AD7-1FDF-472C-BCF5-019658FEE13E}
+		{C8737BBA-A5FA-48E5-93F0-571CBED569BD} = {E3DB5AD7-1FDF-472C-BCF5-019658FEE13E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9944A673-CA4E-4E08-B186-5FD3CED8C9CD}

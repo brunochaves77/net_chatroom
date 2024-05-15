@@ -1,16 +1,13 @@
-﻿using ChatRoom.Application.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace ChatRoom.WebApplication.Controllers {
-    public static class AuthenticationSetup {
+namespace ChatRoom.WebApplication.Configuration {
+    public static class AuthenticationConfiguration {
 
-        private static string PrivateSecretKey = "chave-secreta-referente-ao-sistema-criado-por-lucas-matheus";
+        private static string PrivateSecretKey = "37a174eae4d02a7470a8fbbdba68f9d623cb68cc";
 
         public static void ConfigureJWT(this WebApplicationBuilder builder) {
 

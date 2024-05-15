@@ -1,13 +1,9 @@
-using ChatRoom.Application.Services;
 using ChatRoom.Repository;
+using ChatRoom.WebApplication.ApplicationService;
 using ChatRoom.WebApplication.Configuration;
-using ChatRoom.WebApplication.Controllers;
 using ChatRoom.WebApplication.Hubs;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -53,10 +49,13 @@ builder.Services.Configure<AppDataContext>(o =>
     o.Database.Migrate();
 });
 
+builder.ConfigureRabbitMQ();
 builder.ConfigureRepository();
 builder.ConfigureService();
 
 var app = builder.Build();
+
+RabbitMQApplicationService.Provider = app.Services;
 
 System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
 

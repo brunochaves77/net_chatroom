@@ -1,6 +1,8 @@
 ﻿using ChatRoom.Application.Models;
 using ChatRoom.Domain.Entities;
 using ChatRoom.Repository.Repositories;
+using ChatRoom.WebApplication.ApplicationService;
+using ChatRoom.WebApplication.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SignalR;
@@ -16,13 +18,21 @@ namespace ChatRoom.WebApplication.Hubs {
         private readonly RoomRepository _roomRepository;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
+        
+
         public ChatHub(ChatMessageRepository chatMessageRepository, UserManager<IdentityUser> userManager, RoomRepository roomRepository, IHttpContextAccessor httpContextAccessor)
         {
             _roomRepository = roomRepository;
             _chatMessageRepository = chatMessageRepository;
             _userManager = userManager;
             _httpContextAccessor = httpContextAccessor;
+
         }
+
+
+        
+
+        
 
         public async Task JoinChatRoom(string roomName) {
             string connectionId = Context.ConnectionId;
@@ -87,6 +97,9 @@ namespace ChatRoom.WebApplication.Hubs {
                
                await Clients.Client(userKey.Value.SignalConnectionId).SendAsync("ReceiveMessage", user, message);
             }
+
+            RabbitMQApplicationService.SendMessageFromRabbitMQ(chatMessage.Username, userChatData.Room.Name, chatMessage.Message);
+
         }
 
         public async Task LeaveChatRoom(string roomName) {

@@ -1,10 +1,9 @@
 ﻿using ChatRoom.Application.Models.Requests;
-using ChatRoom.Application.Models.Responses;
 using ChatRoom.Application.Services;
+using ChatRoom.WebApplication.Configuration;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace ChatRoom.WebApplication.Controllers {
     [Route("api")]
@@ -47,7 +46,7 @@ namespace ChatRoom.WebApplication.Controllers {
                 if(!login.Succeeded)
                     return Unauthorized();
 
-                var result = AuthenticationSetup.GenerateJwtToken(model.Username);
+                var result = AuthenticationConfiguration.GenerateJwtToken(model.Username);
 
                 return Ok(result);
             }
