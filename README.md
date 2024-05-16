@@ -13,3 +13,7 @@ For running the backend just run the bat file and starts the application WebAppl
 Then for running the frontend project, go to the frontend folder and run:
 - npm install
 - npm run dev
+
+
+
+![Img](https://github.com/brunochaves77/net_chatroom/blob/main/Misc/image.png)
