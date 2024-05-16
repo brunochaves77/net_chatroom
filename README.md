@@ -7,5 +7,9 @@ When executing the page for two or more users, you need to open the browser as i
 If for any reason you receive error sending message to RabbitMQ, it is because the port couldnt be opened or is in use. 
 
 Run SQLServer(port 1435) and RabbitMQ (port 15673).
-Open the command prompt (cmd), navigate inside the project "\src" folder, and type: "run.bat"
-This script will run the projects and open the browsers.
+Open the archive "run.bat"
+This script will run initial scripts.
+For running the backend just run the bat file and starts the application WebApplication and the ChatBot console application. 
+Then for running the frontend project, go to the frontend folder and run:
+- npm install
+- npm run dev
