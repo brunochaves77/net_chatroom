@@ -86,9 +86,12 @@ namespace ChatRoom.WebApplication.Hubs {
                 Message = message, 
                 RoomId = userChatData.Room.Id,
             };
-
-            _chatMessageRepository.Add(chatMessage);
-            _chatMessageRepository.Commit();
+            
+            if (!chatMessage.Message.StartsWith("/stock"))
+            {
+                _chatMessageRepository.Add(chatMessage);
+                _chatMessageRepository.Commit();
+            }
 
             foreach (var userKey in _chatRooms)
             {

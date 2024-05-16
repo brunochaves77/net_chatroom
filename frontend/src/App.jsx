@@ -55,7 +55,7 @@ function App() {
             console.log(data);
 
             data.sort((a, b) => {
-              return new Date(a.receivedAt) - new Date(b.receivedAt);
+              return new Date(b.receivedAt) - new Date(a.receivedAt);
             });
 
             data.reverse();
