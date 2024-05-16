@@ -14,7 +14,6 @@ namespace ChatRoom.WebApplication.Controllers {
             _chatMessageService = chatMessageService;
         }
         
-        [Authorize]
         [HttpGet("messages/latest-by-room-id/{roomId}")]
         public IActionResult GetChatMessages(Guid roomId) 
         {

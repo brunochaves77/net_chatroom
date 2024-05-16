@@ -64,10 +64,10 @@ function App() {
 
             setMessages(
               data.map((message) => ({
-                id: message.Id,
-                name: message.Username,
-                msg: message.Message,
-                receivedAt: message.ReceivedAt,
+                id: message.id,
+                name: message.username,
+                msg: message.message,
+                receivedAt: message.receivedAt,
               }))
             );
 

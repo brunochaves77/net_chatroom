@@ -85,10 +85,10 @@ namespace ChatRoom.WebApplication.Hubs {
                 Username = user.UserName, 
                 Message = message, 
                 RoomId = userChatData.Room.Id,
-                Room = userChatData.Room 
             };
 
             _chatMessageRepository.Add(chatMessage);
+            _chatMessageRepository.Commit();
 
             foreach (var userKey in _chatRooms)
             {
