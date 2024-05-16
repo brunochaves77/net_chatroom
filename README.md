@@ -14,6 +14,8 @@ Then for running the frontend project, go to the frontend folder and run:
 - npm install
 - npm run dev
 
+Application video
+https://drive.google.com/file/d/1a5jL18d_8-zlaG_d9ZZRaL9Wu_Ycvdqh/view?usp=drive_link
 
 
 ![Img](https://github.com/brunochaves77/net_chatroom/blob/main/Misc/image.png)
